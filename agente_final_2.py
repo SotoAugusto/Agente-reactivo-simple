@@ -1,3 +1,5 @@
+from email import message
+from os import system
 from turtle import *
 # from tkinter import *
 from random import randrange
@@ -11,7 +13,7 @@ import turtle
 # create a new drawing board(window) and a turtle. 
 # Let’s create window and the turtle
 window = turtle.Screen()
-window.bgcolor("white")
+window.bgcolor("white")#Comentario Prueba
 window.title("Agente reactivo simple")
 # agent = turtle.Turtle()
 # agent = Turtle()
@@ -27,7 +29,7 @@ window.setup(width=900, height=700, startx=None, starty=None)
 speed(0)
 
 
-number_of_obstacles = 1
+number_of_obstacles = 2
 cm = 30 #MEDIDA DE LOS CUADROS
 sx = -400 #SETUP X (Posición inicial del lapicero en X)
 sy = 300 #SETUP Y (Posición inicial del lapicero en Y)
@@ -36,7 +38,7 @@ cy = sy #COORDENADAS DEL LÁPIZ EN Y
 
 
 # Tamaño de la cuadrícula (20x20)
-size_of_grid = 20 
+size_of_grid = int(input('Digite la matriz: '))
 
 c = 1 #AUXILIAR QUE INDICA SI EL AGENTE SE MUEVE A LA DERECHA O IZQUIERDA
 co = 0 #VARIABLE AUXILIAR PARA ESQUIVAR
@@ -62,7 +64,7 @@ def create_obstacles():
     random_num_obstacle_position = 0       #AUXILIAR EN LA ELECCIÓN DE LOS OBSTACULOS ALEATORIOS
     list_obstacles = []      #GUARDA LAS COORDENADAS DE LOS OBSTACULOS GENERADOS
     
-    for i in range(18):
+    for i in range(size_of_grid-2):
         aux += cm
         auy -= cm
         lx.append(aux)
@@ -77,7 +79,6 @@ def create_obstacles():
     for i in range (number_of_obstacles):
         
         # * obstacle
-        # ! Este es un comentario de prueba
         penup()
         
         random_num_obstacle_position = random.choice(list_coordinates)
@@ -116,10 +117,10 @@ def agente():
     color("black", "lime") #COLOR DEL LÁPIZ Y RELLENO RESPECTIVAMENTE
     
     for i in range(size_of_grid):
-        if c == False:
+        if c == False: 
             c = 1
             for i in range(size_of_grid):
-                if c == 21:
+                if c == (size_of_grid+1):
                     break
                 posix = ((round(pos()[0]-cm)),(round(pos()[1])))
                 print("HACIA ESTE: ", c, " POSICIÓN EN X, Y: ", round(pos()[0])," ", round(pos()[1]))
@@ -165,8 +166,7 @@ def agente():
         else:
             c = 1
             for i in range(size_of_grid):
-                
-                if c == 21:
+                if c == (size_of_grid+1):
                     break
                 
                 #print("C: ", c)
@@ -227,11 +227,19 @@ def meta():
     color("purple", "purple")
     penup()
     setheading(90)
-    setposition(170, 300)
+    final = setposition(170, 300)
     begin_fill()
     pintar()
     end_fill()
-    
+
+    return final
+
+def fin():
+    for j in range(size_of_grid):
+        if posix == meta():
+            print('fin')
+
+fin()
 meta()
 create_obstacles()
 agente()
