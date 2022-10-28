@@ -9,7 +9,7 @@ import turtle
 
 # ? number_of_obstacles = int(input('Introduzca el número de obstaculos deseados:\n'))
 
-
+#aaaaaaaaa
 # create a new drawing board(window) and a turtle. 
 # Let’s create window and the turtle
 window = turtle.Screen()
