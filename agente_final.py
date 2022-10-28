@@ -77,7 +77,7 @@ def create_obstacles():
     for i in range (number_of_obstacles):
         
         # * obstacle
-        # ! este es un comentario de prueba
+        # ! Este es un comentario de prueba
         penup()
         
         random_num_obstacle_position = random.choice(list_coordinates)
