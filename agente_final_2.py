@@ -52,7 +52,7 @@ ny = 1 #VARIABLE AUXILIAR PARA IMPRIMIR
 def create_obstacles():
     global list_obstacles
     global number_of_obstacles
-    
+    #hola
     # * obstacle
     color("red") #COLOR DEL LÁPIZ Y RELLENO RESPECTIVAMENTE
     
