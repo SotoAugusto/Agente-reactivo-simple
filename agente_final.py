@@ -1,3 +1,5 @@
+from email import message
+from os import system
 from turtle import *
 # from tkinter import *
 from random import randrange
@@ -27,14 +29,14 @@ window.setup(width=900, height=700, startx=None, starty=None)
 speed(0)
 
 
-number_of_obstacles = 1
+number_of_obstacles = 2
 cm = 30 #MEDIDA DE LOS CUADROS
 sx = -400 #SETUP X (Posición inicial del lapicero en X)
 sy = 300 #SETUP Y (Posición inicial del lapicero en Y)
 cx = sx #COORDENADAS DEL LAPIZ EN X
 cy = sy #COORDENADAS DEL LÁPIZ EN Y
 
-
+# size_of_grid = int(input('Digite la matriz: '))
 # Tamaño de la cuadrícula (20x20)
 size_of_grid = 20 
 
@@ -62,7 +64,9 @@ def create_obstacles():
     random_num_obstacle_position = 0       #AUXILIAR EN LA ELECCIÓN DE LOS OBSTACULOS ALEATORIOS
     list_obstacles = []      #GUARDA LAS COORDENADAS DE LOS OBSTACULOS GENERADOS
     
-    for i in range(18):
+
+	#! originalmente 18
+    for i in range(size_of_grid-2):
         aux += cm
         auy -= cm
         lx.append(aux)
@@ -77,7 +81,6 @@ def create_obstacles():
     for i in range (number_of_obstacles):
         
         # * obstacle
-        # ! Este es un comentario de prueba
         penup()
         
         random_num_obstacle_position = random.choice(list_coordinates)
@@ -119,7 +122,9 @@ def agente():
         if c == False:
             c = 1
             for i in range(size_of_grid):
-                if c == 21:
+
+		# ! Originalmente 21
+                if c == (size_of_grid+1):
                     break
                 posix = ((round(pos()[0]-cm)),(round(pos()[1])))
                 print("HACIA ESTE: ", c, " POSICIÓN EN X, Y: ", round(pos()[0])," ", round(pos()[1]))
@@ -165,8 +170,9 @@ def agente():
         else:
             c = 1
             for i in range(size_of_grid):
-                
-                if c == 21:
+
+		# ! Originalmente 21
+                if c == (size_of_grid+1):
                     break
                 
                 #print("C: ", c)
