@@ -9,7 +9,9 @@ import turtle
 
 # ? number_of_obstacles = int(input('Introduzca el número de obstaculos deseados:\n'))
 
+
 #aaaaaaaaa
+
 # create a new drawing board(window) and a turtle. 
 # Let’s create window and the turtle
 window = turtle.Screen()
@@ -52,7 +54,9 @@ ny = 1 #VARIABLE AUXILIAR PARA IMPRIMIR
 def create_obstacles():
     global list_obstacles
     global number_of_obstacles
+
     #hola
+
     # * obstacle
     color("red") #COLOR DEL LÁPIZ Y RELLENO RESPECTIVAMENTE
     
