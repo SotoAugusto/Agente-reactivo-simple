@@ -17,7 +17,6 @@ window.title("Agente reactivo simple")
 # agent = Turtle()
 
 window.setup(width=900, height=700, startx=None, starty=None)
-# window.setup(startx=None, starty=None)
 
 
 
@@ -40,37 +39,36 @@ number_of_obstacles = 5
 agent_initial_position_X = -400 
 agent_initial_position_Y = -270 
 
-pencil_position_X = agent_initial_position_X #COORDENADAS DEL LAPIZ EN X
-pencil_position_Y = agent_initial_position_Y #COORDENADAS DEL LÁPIZ EN Y
+pencil_position_X = agent_initial_position_X 
+pencil_position_Y = agent_initial_position_Y 
 
 
 
-column = 1 #AUXILIAR QUE INDICA SI EL AGENTE SE MUEVE A LA DERECHA O IZQUIERDA
+column = 1 
 co = 0 #VARIABLE AUXILIAR PARA ESQUIVAR
 
 
 list_obstacles = [] 
-posix = list() #VARIABLE QUE GUARDA LAS COORDENADAS (px, py)
-nx = 0 #VARIABLE AUXILIAR PARA IMPRIMIR
-ny = 1 #VARIABLE AUXILIAR PARA IMPRIMIR
+posix = list() #VARIABLE QUE GUARDA LAS COORDENADAS (px, p = 0)
+
         
 def create_obstacles():
     global list_obstacles
     global number_of_obstacles
     
     # * obstacle
-    color("red") #COLOR DEL LÁPIZ Y RELLENO RESPECTIVAMENTE
+    color("red") 
     
     random_num_obstacle_position = 0       #AUXILIAR EN LA ELECCIÓN DE LOS OBSTACULOS ALEATORIOS
     obstacle_position_X = agent_initial_position_X     #AUXILIAR PARA GUARDAR COORDENADAS EN X
     obstacle_position_Y = agent_initial_position_Y     #GUARDA TODAS LAS COORDENADAS POSIBLES EN Y
+    
     lx = list()  #GUARDA TODAS LAS COORDENADAS EN X
     ly = list()  #GUARDA TODAS LAS COORDENADAS EN Y
-    list_coordinates = list()   #GUARDA TODAS LAS COORDENADAS POSIBLES
- 
-    list_obstacles = []      #GUARDA LAS COORDENADAS DE LOS OBSTACULOS GENERADOS
+    list_coordinates = list() 
+    list_obstacles = []      
     
-	# ! originalmente 18
+
     for i in range(size_of_grid-2):
         obstacle_position_X += size_square
         obstacle_position_Y += size_square
@@ -117,8 +115,6 @@ def agent():
     global column
     global pencil_position_X
     global pencil_position_Y
-    global nx
-    global ny
     global posix
     co = 0 #POSICIONES QUE BAJA AL ESQUIVAR
     color("black", "lime") #COLOR DEL LÁPIZ Y RELLENO RESPECTIVAMENTE
@@ -130,14 +126,13 @@ def agent():
             
 
             for i in range(size_of_grid):
-		        # ! originalmente 21
                 if column == (size_of_grid+1):                    
                     break
                 posix = ((round(pos()[0]-size_square)),(round(pos()[1])))
                 
-                print ("ACA ESTA EL PINCHE POSIX", posix)
+                print ("POSIX ACAAAAA", posix)
                 
-                print("HACIA ESTE: ", column, " POSICIÓN EN X, Y: ", round(pos()[0])," ", round(pos()[1]))
+                print("HACIA OESTE: ", column, " POSICIÓN EN X, Y: ", round(pos()[0])," ", round(pos()[1]))
                 pendown()
                 begin_fill()
                 pintar()
@@ -183,7 +178,6 @@ def agent():
             column = 1
             for i in range(size_of_grid):
 
-		# ! originalmente 21
                 if column == (size_of_grid+1):
                     
                     break
@@ -198,7 +192,7 @@ def agent():
                 end_fill()
                 posix = ((round(pos()[0]+size_square)),(round(pos()[1])))
                 pencil_position_X += size_square
-                print("HACIA OESTE: ", column," POSICIÓN EN X, Y: ", round(pos()[0])," ",round(pos()[1]))
+                print("HACIA ESTE: ", column," POSICIÓN EN X, Y: ", round(pos()[0])," ",round(pos()[1]))
                 column+=1
                 
                 
@@ -248,14 +242,14 @@ def pintar():
     turtle.forward(size_square)
     turtle.left(90)
     
-def meta():
-    color("purple", "purple")
-    penup()
-    setheading(90)
-    setposition(170, 300)
-    begin_fill()
-    pintar()
-    end_fill()
+# def meta():
+#     color("purple", "purple")
+#     penup()
+#     setheading(90)
+#     setposition(170, 300)
+#     begin_fill()
+#     pintar()
+#     end_fill()
     
     
         
@@ -274,5 +268,5 @@ meta()
 create_obstacles()
 agent()
 tkinter.messagebox.showinfo(title="Agente reactivo simple", message="FINIIIIIIIIIIIIIIIIIISH")
-window.mainloop()
 exit()
+# window.mainloop()
