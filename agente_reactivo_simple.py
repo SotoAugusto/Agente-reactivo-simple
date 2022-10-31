@@ -134,9 +134,9 @@ def agent():
                     break
                 posix = ((round(pos()[0]-size_square)),(round(pos()[1])))
                 
-                print ("POSIX ACAAAAA", posix)
+                # print ("POSIX ACAAAAA", posix)
                 
-                print("HACIA OESTE: ", column, " POSICIÓN EN X, Y: ", round(pos()[0])," ", round(pos()[1]))
+                # print("HACIA OESTE: ", column, " POSICIÓN EN X, Y: ", round(pos()[0])," ", round(pos()[1]))
                 pendown()
                 begin_fill()
                 draw_square()
@@ -196,7 +196,7 @@ def agent():
                 end_fill()
                 posix = ((round(pos()[0]+size_square)),(round(pos()[1])))
                 pencil_position_X += size_square
-                print("HACIA ESTE: ", column," POSICIÓN EN X, Y: ", round(pos()[0])," ",round(pos()[1]))
+                # print("HACIA ESTE: ", column," POSICIÓN EN X, Y: ", round(pos()[0])," ",round(pos()[1]))
                 column+=1
                 
                 
