@@ -81,7 +81,7 @@ def create_obstacles():
     for x in lx:
         for y in ly: #CICLO PARA EVITAR QUE SE GENEREN OBSTACULOS EN LA PRIMERA Y ULTIMA FILA
             list_coordinates.append((x,y)) 
-    print("LOS ARREGLOS LX Y LY SON: \nLX: ", lx,"\nLY: ", ly,"\nL: ",list_coordinates)
+    # print("LOS ARREGLOS LX Y LY SON: \nLX: ", lx,"\nLY: ", ly,"\nL: ",list_coordinates)
 
 
     for i in range (number_of_obstacles):
@@ -227,7 +227,7 @@ def agent():
                     
                     
                     
-            print("FINAL DE LA FILA: ", column, " POSICIÓN EN X, Y: ", round(pos()[0])," ", round(pos()[1])) #POSCIÓN FINAL FUERA DEL CICLO
+            # print("FINAL DE LA FILA: ", column, " POSICIÓN EN X, Y: ", round(pos()[0])," ", round(pos()[1])) #POSCIÓN FINAL FUERA DEL CICLO
             pencil_position_X -= size_square
             pencil_position_Y += size_square
             penup()
