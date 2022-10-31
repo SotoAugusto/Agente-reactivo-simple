@@ -1,3 +1,5 @@
+# command to install turtle using deprecated version
+# pip install turtle --use-deprecated=backtrack-on-build-failures
 from turtle import *
 import tkinter
 from random import randrange
