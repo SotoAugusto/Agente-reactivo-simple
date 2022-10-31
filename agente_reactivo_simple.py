@@ -17,6 +17,7 @@ window.title("Agente reactivo simple")
 # agent = Turtle()
 # pencolor("black")
 # turtle.pencolor("black")
+shape("circle")
 
 window.setup(width=900, height=700, startx=None, starty=None)
 
@@ -138,7 +139,7 @@ def agent():
                 print("HACIA OESTE: ", column, " POSICIÓN EN X, Y: ", round(pos()[0])," ", round(pos()[1]))
                 pendown()
                 begin_fill()
-                pintar()
+                draw_square()
                 end_fill()
                 pencil_position_X -= size_square    
                 
@@ -149,17 +150,17 @@ def agent():
                     setposition(pencil_position_X, pencil_position_Y)
                     pendown()
                     begin_fill()
-                    pintar()
+                    draw_square()
                     end_fill()
                     pencil_position_X -= size_square
                     setposition(pencil_position_X, pencil_position_Y)
                     begin_fill()
-                    pintar()
+                    draw_square()
                     end_fill()
                     pencil_position_X -= size_square
                     setposition(pencil_position_X, pencil_position_Y)
                     begin_fill()
-                    pintar()
+                    draw_square()
                     end_fill()
                     pencil_position_Y += size_square
                     setposition(pencil_position_X, pencil_position_Y)
@@ -191,7 +192,7 @@ def agent():
                 pendown()
                 begin_fill()
                 setheading(90)
-                pintar()
+                draw_square()
                 end_fill()
                 posix = ((round(pos()[0]+size_square)),(round(pos()[1])))
                 pencil_position_X += size_square
@@ -206,17 +207,17 @@ def agent():
                     setposition(pencil_position_X,pencil_position_Y)
                     pendown()
                     begin_fill()
-                    pintar()
+                    draw_square()
                     end_fill()
                     pencil_position_X += size_square
                     setposition(pencil_position_X, pencil_position_Y)
                     begin_fill()
-                    pintar()
+                    draw_square()
                     end_fill()
                     pencil_position_X += size_square
                     setposition(pencil_position_X, pencil_position_Y)
                     begin_fill()
-                    pintar()
+                    draw_square()
                     end_fill()
                     pencil_position_Y += size_square
                     setposition(pencil_position_X, pencil_position_Y)
@@ -235,7 +236,7 @@ def agent():
             
             
 
-def pintar():
+def draw_square():
     turtle.forward(size_square)
     turtle.left(90)
     turtle.forward(size_square)
@@ -263,7 +264,7 @@ def meta():
     setposition(140, 270)
     # setposition(170, 300) #for grid 20
     begin_fill()
-    pintar()
+    draw_square()
     end_fill()
     
     
