@@ -15,6 +15,8 @@ window.bgcolor("white")
 window.title("Agente reactivo simple")
 # agent = turtle.Turtle()
 # agent = Turtle()
+# pencolor("black")
+# turtle.pencolor("black")
 
 window.setup(width=900, height=700, startx=None, starty=None)
 
@@ -111,13 +113,14 @@ def create_obstacles():
     setposition(agent_initial_position_X,agent_initial_position_Y)
 
 def agent():
-
+    turtle.forward(size_square)
+    
     global column
     global pencil_position_X
     global pencil_position_Y
     global posix
     co = 0 #POSICIONES QUE BAJA AL ESQUIVAR
-    color("black", "lime") #COLOR DEL LÁPIZ Y RELLENO RESPECTIVAMENTE
+    color("black", "lime") #COLOR RELLENO Y CONTORNO RESPECTIVAMENTE
     
     for i in range(size_of_grid):
         
